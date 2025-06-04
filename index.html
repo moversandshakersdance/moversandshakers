@@ -34,32 +34,36 @@
       font-size: 3em;
       margin-bottom: 40px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      outline: none;
+      user-select: none;
+      caret-color: transparent; /* Removes blinking cursor */
     }
 
     .btn {
       display: block;
-      background-color: rgba(255, 255, 255, 0.8);
+      background: linear-gradient(135deg, #e2a6f6, #f8d1f0);
       color: black;
-      border: none;
+      border: 2px solid #666;
       border-radius: 25px;
       padding: 15px 30px;
       margin: 10px 0;
       font-size: 1.2em;
       width: 220px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
-      background-color: rgba(255, 255, 255, 1);
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #f5b9ff, #ffe1f8);
     }
   </style>
 </head>
 <body>
   <h1>I would like to learn...</h1>
-  <button class="btn" onclick="redirect()">[Salsa]</button>
-  <button class="btn" onclick="redirect()">[Bachata]</button>
-  <button class="btn" onclick="redirect()">[Both]</button>
+  <button class="btn" onclick="redirect()">Salsa</button>
+  <button class="btn" onclick="redirect()">Bachata</button>
+  <button class="btn" onclick="redirect()">Both</button>
 
   <script>
     function redirect() {
