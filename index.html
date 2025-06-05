@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
 
-  <!-- Load bold display font (Google Fonts) -->
+  <!-- Load bold display font -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <!-- Redirect to secure www version -->
@@ -59,9 +59,9 @@
 
     .btn {
       display: block;
-      background: linear-gradient(135deg, #e2a6f6, #f8d1f0);
-      color: black;
-      border: 2px solid #666;
+      background: linear-gradient(135deg, #f9d423, #ff4e50);
+      color: white;
+      border: 2px solid #fff;
       border-radius: 25px;
       padding: 15px 30px;
       margin: 10px auto;
@@ -69,17 +69,20 @@
       width: 220px;
       cursor: pointer;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      font-weight: bold;
     }
 
     .btn:hover {
       transform: scale(1.05);
-      background: linear-gradient(135deg, #f5b9ff, #ffe1f8);
+      background: linear-gradient(135deg, #fcd000, #ff5733);
     }
 
     @media (max-width: 480px) {
       h1 {
         font-size: 2em;
       }
+
       .btn {
         width: 80%;
         font-size: 1em;
