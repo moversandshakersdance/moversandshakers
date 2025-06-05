@@ -14,17 +14,22 @@
   </script>
 
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      padding: 0 20px;
     }
 
     body::before {
@@ -39,7 +44,7 @@
 
     h1 {
       color: white;
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 40px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
       caret-color: transparent;
@@ -53,7 +58,7 @@
       border: 2px solid #666;
       border-radius: 25px;
       padding: 15px 30px;
-      margin: 10px 0;
+      margin: 10px auto;
       font-size: 1.2em;
       width: 220px;
       cursor: pointer;
@@ -63,6 +68,16 @@
     .btn:hover {
       transform: scale(1.05);
       background: linear-gradient(135deg, #f5b9ff, #ffe1f8);
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2em;
+      }
+      .btn {
+        width: 80%;
+        font-size: 1em;
+      }
     }
   </style>
 </head>
