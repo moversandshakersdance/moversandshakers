@@ -17,28 +17,30 @@
   </script>
 
   <style>
-    /* Prevent any horizontal sliding */
+    /* Prevent any page scrolling or panning */
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow-x: hidden;
+      height: 100vh;
+      overflow: hidden;
+      overscroll-behavior: none;
     }
 
     body {
       font-family: Arial, sans-serif;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center; position: relative;
-      overflow-y: auto; /* vertical scrolling allowed */
-      padding: 0 20px;
-      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
     }
 
     /* Base background */
     body::before {
       content: "";
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: url('dance-class.jpg') no-repeat center center;
       background-size: cover;
       filter: brightness(0.5);
@@ -62,29 +64,23 @@
 
     .btn {
       display: block;
-      background: linear-gradient(
-        135deg,
-        rgba(249,212,35,0.85),
-        rgba(255,78,80,0.85)
-      );
+      background: linear-gradient(135deg, rgba(249,212,35,0.85), rgba(255,78,80,0.85));
       color: white;
       border: 2px solid rgba(255,255,255,0.6);
       border-radius: 25px;
       padding: 15px 30px;
       margin: 10px auto;
-      width: 220px; font-size: 1.2em;
-      cursor: pointer; font-weight: bold;
+      width: 220px;
+      font-size: 1.2em;
+      cursor: pointer;
+      font-weight: bold;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       backdrop-filter: blur(3px);
       transition: transform .3s, background .3s;
     }
     .btn:hover {
       transform: scale(1.05);
-      background: linear-gradient(
-        135deg,
-        rgba(252,208,0,0.95),
-        rgba(255,87,51,0.95)
-      );
+      background: linear-gradient(135deg, rgba(252,208,0,0.95), rgba(255,87,51,0.95));
     }
 
     @media (max-width: 600px) {
@@ -107,7 +103,7 @@
 
   <script>
     function redirect() {
-      window.location.href = "https://www.moversandshakersdance.com/";
+      location.href = "https://www.moversandshakersdance.com/";
     }
   </script>
 </body>
