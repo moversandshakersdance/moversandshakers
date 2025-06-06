@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
 
-  <!-- Load bold display font -->
+  <!-- Load bold font similar to flyer -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <!-- Redirect to secure www version -->
@@ -59,9 +59,9 @@
 
     .btn {
       display: block;
-      background: linear-gradient(135deg, #f9d423, #ff4e50);
+      background: linear-gradient(135deg, rgba(249, 212, 35, 0.85), rgba(255, 78, 80, 0.85));
       color: white;
-      border: 2px solid #fff;
+      border: 2px solid rgba(255, 255, 255, 0.6);
       border-radius: 25px;
       padding: 15px 30px;
       margin: 10px auto;
@@ -71,11 +71,12 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       font-weight: bold;
+      backdrop-filter: blur(3px);
     }
 
     .btn:hover {
       transform: scale(1.05);
-      background: linear-gradient(135deg, #fcd000, #ff5733);
+      background: linear-gradient(135deg, rgba(252, 208, 0, 0.95), rgba(255, 87, 51, 0.95));
     }
 
     @media (max-width: 600px) {
@@ -89,7 +90,7 @@
       }
 
       body::before {
-        background-position: 25% center; /* Focus left to highlight Alex */
+        background-position: 25% center; /* Focus left side on mobile (Alex) */
       }
     }
   </style>
