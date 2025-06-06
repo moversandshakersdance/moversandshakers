@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
 
-  <!-- Load the bold display font -->
+  <!-- Load bold font similar to flyer -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <!-- Redirect to secure www version -->
   <script>
     const desiredHost = "www.90034dance.com";
-    if (
-      location.hostname !== desiredHost ||
-      location.protocol !== "https:"
-    ) {
+    if (location.hostname !== desiredHost || location.protocol !== "https:") {
       location.href = `https://${desiredHost}${location.pathname}${location.search}${location.hash}`;
     }
   </script>
@@ -36,15 +33,13 @@
       position: relative;
       overflow: hidden;
       padding: 0 20px;
-      min-height: 100vh; /* Ensures full-height on mobile */
     }
 
-    /* Desktop & tablet background */
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('dance-class.jpg') no-repeat center center;
+      background: url('dance-class.jpg') no-repeat center center fixed;
       background-size: cover;
       filter: brightness(0.5);
       z-index: -1;
@@ -64,11 +59,7 @@
 
     .btn {
       display: block;
-      background: linear-gradient(
-        135deg,
-        rgba(249, 212, 35, 0.85),
-        rgba(255, 78, 80, 0.85)
-      );
+      background: linear-gradient(135deg, rgba(249, 212, 35, 0.85), rgba(255, 78, 80, 0.85));
       color: white;
       border: 2px solid rgba(255, 255, 255, 0.6);
       border-radius: 25px;
@@ -85,11 +76,7 @@
 
     .btn:hover {
       transform: scale(1.05);
-      background: linear-gradient(
-        135deg,
-        rgba(252, 208, 0, 0.95),
-        rgba(255, 87, 51, 0.95)
-      );
+      background: linear-gradient(135deg, rgba(252, 208, 0, 0.95), rgba(255, 87, 51, 0.95));
     }
 
     @media (max-width: 600px) {
@@ -102,11 +89,9 @@
         font-size: 1em;
       }
 
-      /* On mobile: zoom in (150%) and shift so faces appear above buttons */
+      /* Shift background 85% to the right and 30% down on mobile so the dancers’ faces sit above the buttons */
       body::before {
-        background-size: 150%;
-        background-position: 85% 20%;
-        background-attachment: scroll; /* remove "fixed" */
+        background-position: 85% 30%;
       }
     }
   </style>
