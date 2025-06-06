@@ -4,76 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
-
-  <!-- Bold display font -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
-  <!-- Redirect to HTTPS + www -->
   <script>
     const desiredHost = "www.90034dance.com";
-    if (location.hostname !== desiredHost || location.protocol !== "https:") {
+    if (location.hostname !== desiredHost || location.protocol !== "https:")
       location.href = `https://${desiredHost}${location.pathname}${location.search}${location.hash}`;
-    }
   </script>
-
   <style>
-    /* Prevent any page scrolling or panning */
     html, body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-      overscroll-behavior: none;
+      margin: 0; padding: 0; height: 100vh; overflow: hidden; overscroll-behavior: none;
     }
-
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; position: relative;
     }
 
-    /* Base background */
+    /* Base background for desktop/tablet */
     body::before {
       content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
       background: url('dance-class.jpg') no-repeat center center;
       background-size: cover;
       filter: brightness(0.5);
-      transform: none;
-      transform-origin: center center;
-      will-change: transform;
       z-index: -1;
     }
 
     h1 {
       font-family: 'Anton', sans-serif;
-      font-size: 2.8em;
-      color: white;
+      font-size: 2.8em; color: #fff;
       margin-bottom: 40px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      text-transform: uppercase; letter-spacing: 1px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-      caret-color: transparent;
       user-select: none;
     }
 
     .btn {
       display: block;
       background: linear-gradient(135deg, rgba(249,212,35,0.85), rgba(255,78,80,0.85));
-      color: white;
+      color: #fff;
       border: 2px solid rgba(255,255,255,0.6);
       border-radius: 25px;
       padding: 15px 30px;
       margin: 10px auto;
-      width: 220px;
-      font-size: 1.2em;
-      cursor: pointer;
-      font-weight: bold;
+      width: 220px; font-size: 1.2em;
+      cursor: pointer; font-weight: bold;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       backdrop-filter: blur(3px);
       transition: transform .3s, background .3s;
@@ -87,10 +64,14 @@
       h1 { font-size: 2em; }
       .btn { width: 80%; font-size: 1em; }
 
-      /* Zoom & focus on mobile */
+      /* Expand the pseudo-elt to 150% so there's extra image to pan into view */
       body::before {
-        transform: scale(1.4);
-        transform-origin: -50% 20%;
+        width: 150%; 
+        height: 150%;
+        /* Move the entire box left and up so the dancers land in the center */
+        top: -25%;   /* pulls the image up */
+        left: -35%;  /* pulls the image left */
+        background-size: cover;
       }
     }
   </style>
