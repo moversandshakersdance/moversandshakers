@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
 
-  <!-- Load bold font -->
+  <!-- Bold display font -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-  <!-- Force HTTPS + www -->
+  <!-- Redirect to HTTPS + www -->
   <script>
     const desiredHost = "www.90034dance.com";
     if (location.hostname !== desiredHost || location.protocol !== "https:") {
@@ -24,18 +24,21 @@
       font-family: Arial, sans-serif;
       display: flex; flex-direction: column;
       justify-content: center; align-items: center;
-      text-align: center;
-      position: relative; overflow: hidden;
-      padding: 0 20px; min-height: 100vh;
+      text-align: center; position: relative;
+      overflow: hidden; padding: 0 20px;
+      min-height: 100vh;
     }
 
-    /* Desktop & tablet background */
+    /* Desktop & tablet */
     body::before {
       content: "";
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
       background: url('dance-class.jpg') no-repeat center center;
       background-size: cover;
       filter: brightness(0.5);
+      transform: none;
+      transform-origin: center center;
+      will-change: transform;
       z-index: -1;
     }
 
@@ -69,21 +72,14 @@
 
     @media (max-width: 600px) {
       h1 { font-size: 2em; }
-      .btn {
-        width: 80%; font-size: 1em;
-      }
+      .btn { width: 80%; font-size: 1em; }
+
+      /* Zoom & focus on mobile */
       body::before {
-        /* Zoom the image to 150% on mobile */
-        background-size: 150%;
-
-        /* Adjust these two values to center your focal point:
-           X% → horizontal offset (0% is left, 100% is right)
-           Y% → vertical offset (0% is top, 100% is bottom)
-        */
-        background-position: 85% 20%;
-
-        /* Avoid the fixed-attachment bug in mobile browsers */
-        background-attachment: scroll;
+        /* scale up the pseudo-element */
+        transform: scale(1.4);
+        /* pick the focal point: 85% across, 20% down */
+        transform-origin: 85% 20%;
       }
     }
   </style>
