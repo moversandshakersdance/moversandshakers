@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
 
-  <!-- Load bold font similar to flyer -->
+  <!-- Load bold font similar to your flyer -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <!-- Redirect to secure www version -->
@@ -35,6 +35,7 @@
       padding: 0 20px;
     }
 
+    /* Base background (desktop) */
     body::before {
       content: "";
       position: absolute;
@@ -89,9 +90,12 @@
         font-size: 1em;
       }
 
-      /* Shift background 85% to the right and 30% down on mobile so the dancers’ faces sit above the buttons */
+      /* On mobile: zoom in and shift background so faces land above buttons */
       body::before {
-        background-position: 85% 30%;
+        /* Zoom the image to 150% of its original size */
+        background-size: 150%;
+        /* Shift right 85% and down 20% */
+        background-position: 85% 20%;
       }
     }
   </style>
