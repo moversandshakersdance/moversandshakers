@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
 
-  <!-- Bold display font -->
+  <!-- Load bold font similar to flyer -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-  <!-- Redirect to HTTPS + www -->
+  <!-- Redirect to secure www version -->
   <script>
     const desiredHost = "www.90034dance.com";
     if (location.hostname !== desiredHost || location.protocol !== "https:") {
@@ -17,36 +17,31 @@
   </script>
 
   <style>
-    /* Prevent any page scrolling or panning */
     html, body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      overflow: hidden;
-      overscroll-behavior: none;
+      height: 100%;
     }
 
     body {
       font-family: Arial, sans-serif;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       text-align: center;
       position: relative;
+      overflow: hidden;
+      padding: 0 20px;
     }
 
-    /* Base background */
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('dance-class.jpg') no-repeat center center;
+      background: url('dance-class.jpg') no-repeat center center fixed;
       background-size: cover;
       filter: brightness(0.5);
-      transform: none;
-      transform-origin: center center;
-      will-change: transform;
       z-index: -1;
     }
 
@@ -64,33 +59,39 @@
 
     .btn {
       display: block;
-      background: linear-gradient(135deg, rgba(249,212,35,0.85), rgba(255,78,80,0.85));
+      background: linear-gradient(135deg, rgba(249, 212, 35, 0.85), rgba(255, 78, 80, 0.85));
       color: white;
-      border: 2px solid rgba(255,255,255,0.6);
+      border: 2px solid rgba(255, 255, 255, 0.6);
       border-radius: 25px;
       padding: 15px 30px;
       margin: 10px auto;
-      width: 220px;
       font-size: 1.2em;
+      width: 220px;
       cursor: pointer;
-      font-weight: bold;
+      transition: all 0.3s ease;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      font-weight: bold;
       backdrop-filter: blur(3px);
-      transition: transform .3s, background .3s;
     }
+
     .btn:hover {
       transform: scale(1.05);
-      background: linear-gradient(135deg, rgba(252,208,0,0.95), rgba(255,87,51,0.95));
+      background: linear-gradient(135deg, rgba(252, 208, 0, 0.95), rgba(255, 87, 51, 0.95));
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 2em; }
-      .btn { width: 100%; font-size: 1em; }
+      h1 {
+        font-size: 2em;
+      }
 
-      /* Zoom & focus on mobile */
+      .btn {
+        width: 80%;
+        font-size: 1em;
+      }
+
+      /* Shift background 85% to the right and 30% down on mobile so the dancers’ faces sit above the buttons */
       body::before {
-        transform: scale(1.0);
-        transform-origin: 25% 20%;
+        background-position: 25% 30%;
       }
     }
   </style>
@@ -103,7 +104,7 @@
 
   <script>
     function redirect() {
-      location.href = "https://www.moversandshakersdance.com/";
+      window.location.href = "https://www.moversandshakersdance.com/";
     }
   </script>
 </body>
