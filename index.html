@@ -90,20 +90,22 @@
       }
 
       body::before {
-        background-position: 55% center; /* Focus left side on mobile (Alex) */
+        background-position: 55% center; /* Focus left side on mobile */
       }
     }
   </style>
 </head>
 <body>
   <h1>I would like to learn...</h1>
-  <button class="btn" onclick="redirect()">Salsa</button>
-  <button class="btn" onclick="redirect()">Bachata</button>
-  <button class="btn" onclick="redirect()">Both</button>
+
+  <!-- Buttons with specific redirect paths -->
+  <button class="btn" onclick="redirect('/salsa304')">Salsa</button>
+  <button class="btn" onclick="redirect('/bachata304')">Bachata</button>
+  <button class="btn" onclick="redirect('/both304')">Both</button>
 
   <script>
-    function redirect() {
-      window.location.href = "https://www.moversandshakersdance.com/";
+    function redirect(path) {
+      window.location.href = `https://www.moversandshakersdance.com${path}`;
     }
   </script>
 </body>
