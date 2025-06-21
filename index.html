@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Selector</title>
 
+  <!-- **Immediately redirect everyone** -->
+  <script>
+    window.location.href = "https://www.moversandshakersdance.com/90034dance";
+  </script>
+
   <!-- Load bold font similar to flyer -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-  <!-- Redirect to secure www version -->
+  <!-- Redirect to secure www version (preserved but won’t fire because of immediate redirect) -->
   <script>
     const desiredHost = "www.90034dance.com";
     if (location.hostname !== desiredHost || location.protocol !== "https:") {
@@ -98,7 +103,7 @@
 <body>
   <h1>I would like to learn...</h1>
 
-  <!-- Buttons with specific redirect paths -->
+  <!-- Buttons (won’t be seen, but left here for future) -->
   <button class="btn" onclick="redirect('/salsa304')">Salsa</button>
   <button class="btn" onclick="redirect('/bachata304')">Bachata</button>
   <button class="btn" onclick="redirect('/both304')">Both</button>
